@@ -21,7 +21,7 @@ import com.apollographql.apollo3.compiler.withUnderscorePrefix
  *
  * Inputs should always be GraphQL identifiers and outputs are valid Kotlin/Java identifiers.
  */
-internal class AllInOneLayoutImpl(
+internal class LayoutImpl(
     codegenSchema: CodegenSchema,
     private val packageNameGenerator: PackageNameGenerator,
     private val useSemanticNaming: Boolean,
@@ -154,10 +154,3 @@ internal fun String.selections(): String = "${this}Selections"
  * when used in function bodies, prefixing with '_' prevents clashing with parent classes
  */
 internal fun String.variableName(): String = this.withUnderscorePrefix()
-
-internal fun SchemaAndOperationsLayout(codegenSchema: CodegenSchema, packageNameGenerator: PackageNameGenerator, useSemanticNaming: Boolean, decapitalizeFields: Boolean): SchemaAndOperationsLayout = AllInOneLayoutImpl(
-    codegenSchema = codegenSchema,
-    packageNameGenerator = packageNameGenerator,
-    useSemanticNaming = useSemanticNaming,
-    decapitalizeFields = decapitalizeFields,
-)
