@@ -6,6 +6,7 @@ import com.apollographql.apollo3.compiler.codegen.kotlin.CgFile
 import com.apollographql.apollo3.compiler.codegen.kotlin.CgFileBuilder
 import com.apollographql.apollo3.compiler.codegen.kotlin.KotlinOperationsContext
 import com.apollographql.apollo3.compiler.codegen.kotlin.KotlinSymbols
+import com.apollographql.apollo3.compiler.codegen.kotlin.helpers.builderTypeSpec
 import com.apollographql.apollo3.compiler.codegen.kotlin.helpers.dataBuilderCtor
 import com.apollographql.apollo3.compiler.codegen.kotlin.helpers.makeClassFromParameters
 import com.apollographql.apollo3.compiler.codegen.kotlin.helpers.maybeAddDescription
@@ -17,7 +18,6 @@ import com.apollographql.apollo3.compiler.codegen.kotlin.operations.util.ignoreE
 import com.apollographql.apollo3.compiler.codegen.kotlin.operations.util.maybeAddFilterNotNull
 import com.apollographql.apollo3.compiler.codegen.kotlin.operations.util.rootFieldFunSpec
 import com.apollographql.apollo3.compiler.codegen.kotlin.operations.util.serializeVariablesFunSpec
-import com.apollographql.apollo3.compiler.codegen.kotlin.schema.builderTypeSpec
 import com.apollographql.apollo3.compiler.codegen.maybeFlatten
 import com.apollographql.apollo3.compiler.internal.applyIf
 import com.apollographql.apollo3.compiler.ir.IrFragmentDefinition
