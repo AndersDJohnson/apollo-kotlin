@@ -2,7 +2,7 @@ package com.apollographql.apollo3.compiler.codegen.kotlin.operations
 
 import com.apollographql.apollo3.compiler.codegen.kotlin.KotlinOperationsContext
 import com.apollographql.apollo3.compiler.codegen.kotlin.KotlinSymbols
-import com.apollographql.apollo3.compiler.codegen.kotlin.adapter.from
+import com.apollographql.apollo3.compiler.codegen.kotlin.helpers.from
 import com.apollographql.apollo3.compiler.codegen.kotlin.helpers.makeClassFromProperties
 import com.apollographql.apollo3.compiler.codegen.kotlin.helpers.maybeAddDeprecation
 import com.apollographql.apollo3.compiler.codegen.kotlin.helpers.maybeAddDescription

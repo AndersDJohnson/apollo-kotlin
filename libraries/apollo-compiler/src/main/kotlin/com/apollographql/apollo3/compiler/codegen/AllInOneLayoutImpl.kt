@@ -21,12 +21,12 @@ import com.apollographql.apollo3.compiler.withUnderscorePrefix
  *
  * Inputs should always be GraphQL identifiers and outputs are valid Kotlin/Java identifiers.
  */
-internal class SchemaAndOperationsLayoutImpl(
+internal class AllInOneLayoutImpl(
     codegenSchema: CodegenSchema,
     private val packageNameGenerator: PackageNameGenerator,
     private val useSemanticNaming: Boolean,
     private val decapitalizeFields: Boolean
-) : SchemaAndOperationsLayout {
+) : SchemaAndOperationsLayout, ExecutableSchemaLayout {
   private val schemaPackageName = executableDocumentPackageName(codegenSchema.normalizedPath)
   private val schemaTypeToClassName: Map<String, String> = mutableMapOf<String, String>().apply {
     val usedNames = mutableSetOf<String>()
@@ -134,7 +134,7 @@ internal fun SchemaLayout.typeUtilPackageName() = "${schemaPackageName()}.type.u
 
 internal fun SchemaLayout.paginationPackageName() = "${schemaPackageName()}.pagination"
 internal fun SchemaLayout.schemaSubPackageName() = "${schemaPackageName()}.schema"
-internal fun SchemaAndOperationsLayoutImpl.executionPackageName() = "${schemaPackageName()}.execution"
+internal fun ExecutableSchemaLayout.executionPackageName() = "${schemaPackageName()}.execution"
 
 internal fun OperationsLayout.operationAdapterPackageName(filePath: String) = "${executableDocumentPackageName(filePath)}.adapter"
 internal fun OperationsLayout.operationResponseFieldsPackageName(filePath: String) = "${executableDocumentPackageName(filePath)}.selections"
@@ -155,7 +155,7 @@ internal fun String.selections(): String = "${this}Selections"
  */
 internal fun String.variableName(): String = this.withUnderscorePrefix()
 
-internal fun SchemaAndOperationsLayout(codegenSchema: CodegenSchema, packageNameGenerator: PackageNameGenerator, useSemanticNaming: Boolean, decapitalizeFields: Boolean): SchemaAndOperationsLayout = SchemaAndOperationsLayoutImpl(
+internal fun SchemaAndOperationsLayout(codegenSchema: CodegenSchema, packageNameGenerator: PackageNameGenerator, useSemanticNaming: Boolean, decapitalizeFields: Boolean): SchemaAndOperationsLayout = AllInOneLayoutImpl(
     codegenSchema = codegenSchema,
     packageNameGenerator = packageNameGenerator,
     useSemanticNaming = useSemanticNaming,

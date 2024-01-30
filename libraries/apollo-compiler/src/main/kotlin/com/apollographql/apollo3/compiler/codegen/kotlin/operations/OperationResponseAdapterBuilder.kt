@@ -3,7 +3,7 @@ package com.apollographql.apollo3.compiler.codegen.kotlin.operations
 import com.apollographql.apollo3.compiler.codegen.kotlin.CgFile
 import com.apollographql.apollo3.compiler.codegen.kotlin.CgFileBuilder
 import com.apollographql.apollo3.compiler.codegen.kotlin.KotlinOperationsContext
-import com.apollographql.apollo3.compiler.codegen.kotlin.adapter.ResponseAdapterBuilder
+import com.apollographql.apollo3.compiler.codegen.kotlin.operations.util.ResponseAdapterBuilder
 import com.apollographql.apollo3.compiler.codegen.maybeFlatten
 import com.apollographql.apollo3.compiler.codegen.operationAdapterPackageName
 import com.apollographql.apollo3.compiler.codegen.operationName

@@ -11,7 +11,7 @@ import com.apollographql.apollo3.compiler.PackageNameGenerator
 import com.apollographql.apollo3.compiler.TargetLanguage
 import com.apollographql.apollo3.compiler.codegen.ResolverKey
 import com.apollographql.apollo3.compiler.codegen.ResolverKeyKind
-import com.apollographql.apollo3.compiler.codegen.SchemaAndOperationsLayoutImpl
+import com.apollographql.apollo3.compiler.codegen.AllInOneLayoutImpl
 import com.apollographql.apollo3.compiler.codegen.java.operations.FragmentBuilder
 import com.apollographql.apollo3.compiler.codegen.java.operations.FragmentDataAdapterBuilder
 import com.apollographql.apollo3.compiler.codegen.java.operations.FragmentModelsBuilder
@@ -159,7 +159,7 @@ internal object JavaCodegen {
         apolloCompilerJavaHooks = compilerJavaHooks,
     ) { resolver ->
 
-      val layout = SchemaAndOperationsLayoutImpl(
+      val layout = AllInOneLayoutImpl(
           codegenSchema = codegenSchema,
           packageNameGenerator = packageNameGenerator,
           useSemanticNaming = useSemanticNaming,
@@ -265,7 +265,7 @@ internal object JavaCodegen {
         apolloCompilerJavaHooks = compilerJavaHooks,
     ) { resolver ->
 
-      val layout = SchemaAndOperationsLayoutImpl(
+      val layout = AllInOneLayoutImpl(
           codegenSchema = codegenSchema,
           packageNameGenerator = packageNameGenerator,
           useSemanticNaming = useSemanticNaming,

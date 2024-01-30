@@ -7,11 +7,11 @@ import com.apollographql.apollo3.compiler.KotlinOperationsCodegenOptions
 import com.apollographql.apollo3.compiler.KotlinSchemaCodegenOptions
 import com.apollographql.apollo3.compiler.PackageNameGenerator
 import com.apollographql.apollo3.compiler.TargetLanguage
-import com.apollographql.apollo3.compiler.codegen.SchemaAndOperationsLayoutImpl
+import com.apollographql.apollo3.compiler.codegen.AllInOneLayoutImpl
 import com.apollographql.apollo3.compiler.codegen.ResolverKey
 import com.apollographql.apollo3.compiler.codegen.ResolverKeyKind
 import com.apollographql.apollo3.compiler.codegen.kotlin.executableschema.AdapterRegistryBuilder
-import com.apollographql.apollo3.compiler.codegen.kotlin.executableschema.CustomScalarAdaptersBuilder
+import com.apollographql.apollo3.compiler.codegen.kotlin.schema.CustomScalarAdaptersBuilder
 import com.apollographql.apollo3.compiler.codegen.kotlin.executableschema.ExecutableSchemaBuilderBuilder
 import com.apollographql.apollo3.compiler.codegen.kotlin.executableschema.MainResolverBuilder
 import com.apollographql.apollo3.compiler.codegen.kotlin.operations.FragmentBuilder
@@ -182,14 +182,14 @@ internal object KotlinCodegen {
         generateAsInternal = generateAsInternal,
     ) { resolver ->
 
-      val layout = SchemaAndOperationsLayoutImpl(
+      val layout = AllInOneLayoutImpl(
           codegenSchema = codegenSchema,
           packageNameGenerator = packageNameGenerator,
           useSemanticNaming = useSemanticNaming,
           decapitalizeFields = decapitalizeFields,
       )
 
-      val context = KotlinContext(
+      val context = KotlinSchemaContext(
           generateMethods = generateMethods,
           jsExport = jsExport,
           layout = layout,
@@ -269,14 +269,14 @@ internal object KotlinCodegen {
         generateAsInternal = generateAsInternal
     ) { resolver ->
 
-      val layout = SchemaAndOperationsLayoutImpl(
+      val layout = AllInOneLayoutImpl(
           codegenSchema = codegenSchema,
           packageNameGenerator = packageNameGenerator,
           useSemanticNaming = useSemanticNaming,
           decapitalizeFields = decapitalizeFields,
       )
 
-      val context = KotlinContext(
+      val context = KotlinOperationsContext(
           generateMethods = generateMethods,
           jsExport = jsExport,
           layout = layout,
@@ -362,14 +362,14 @@ internal object KotlinCodegen {
         null,
         true,
     ) { resolver ->
-      val layout = SchemaAndOperationsLayoutImpl(
+      val layout = AllInOneLayoutImpl(
           codegenSchema = codegenSchema,
           packageNameGenerator = PackageNameGenerator.Flat(packageName),
           useSemanticNaming = false,
           decapitalizeFields = false,
       )
 
-      val context = KotlinContext(
+      val context = KotlinExecutableSchemaContext(
           generateMethods = emptyList(),
           jsExport = false,
           layout = layout,

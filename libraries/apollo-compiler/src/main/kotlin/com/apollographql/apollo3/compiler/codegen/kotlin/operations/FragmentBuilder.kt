@@ -26,7 +26,6 @@ import com.squareup.kotlinpoet.FunSpec
 import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
 import com.squareup.kotlinpoet.TypeName
 import com.squareup.kotlinpoet.TypeSpec
-import jdk.jfr.internal.TypeLibrary.addType
 
 internal class FragmentBuilder(
     private val context: KotlinOperationsContext,
