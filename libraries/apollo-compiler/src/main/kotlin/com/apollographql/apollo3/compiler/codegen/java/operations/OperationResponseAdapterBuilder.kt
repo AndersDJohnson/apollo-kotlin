@@ -2,9 +2,8 @@ package com.apollographql.apollo3.compiler.codegen.java.operations
 
 import com.apollographql.apollo3.compiler.codegen.java.CodegenJavaFile
 import com.apollographql.apollo3.compiler.codegen.java.JavaClassBuilder
-import com.apollographql.apollo3.compiler.codegen.java.JavaContext
 import com.apollographql.apollo3.compiler.codegen.java.JavaOperationsContext
-import com.apollographql.apollo3.compiler.codegen.java.adapter.ResponseAdapterBuilder
+import com.apollographql.apollo3.compiler.codegen.java.operations.util.ResponseAdapterBuilder
 import com.apollographql.apollo3.compiler.codegen.maybeFlatten
 import com.apollographql.apollo3.compiler.codegen.operationAdapterPackageName
 import com.apollographql.apollo3.compiler.codegen.operationName

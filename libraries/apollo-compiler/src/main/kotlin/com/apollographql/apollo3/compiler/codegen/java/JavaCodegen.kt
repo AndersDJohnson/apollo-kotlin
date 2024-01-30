@@ -12,7 +12,6 @@ import com.apollographql.apollo3.compiler.TargetLanguage
 import com.apollographql.apollo3.compiler.codegen.ResolverKey
 import com.apollographql.apollo3.compiler.codegen.ResolverKeyKind
 import com.apollographql.apollo3.compiler.codegen.SchemaAndOperationsLayoutImpl
-import com.apollographql.apollo3.compiler.codegen.java.adapter.EnumResponseAdapterBuilder
 import com.apollographql.apollo3.compiler.codegen.java.operations.FragmentBuilder
 import com.apollographql.apollo3.compiler.codegen.java.operations.FragmentDataAdapterBuilder
 import com.apollographql.apollo3.compiler.codegen.java.operations.FragmentModelsBuilder
@@ -25,6 +24,7 @@ import com.apollographql.apollo3.compiler.codegen.java.operations.OperationVaria
 import com.apollographql.apollo3.compiler.codegen.java.schema.BuilderFactoryBuilder
 import com.apollographql.apollo3.compiler.codegen.java.schema.EnumAsClassBuilder
 import com.apollographql.apollo3.compiler.codegen.java.schema.EnumAsEnumBuilder
+import com.apollographql.apollo3.compiler.codegen.java.schema.EnumResponseAdapterBuilder
 import com.apollographql.apollo3.compiler.codegen.java.schema.InputObjectAdapterBuilder
 import com.apollographql.apollo3.compiler.codegen.java.schema.InputObjectBuilder
 import com.apollographql.apollo3.compiler.codegen.java.schema.InterfaceBuilder

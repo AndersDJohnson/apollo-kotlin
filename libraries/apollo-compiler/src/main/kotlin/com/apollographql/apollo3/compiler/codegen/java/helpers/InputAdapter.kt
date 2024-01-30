@@ -1,7 +1,7 @@
 /*
  * Generates ResponseAdapters for input
  */
-package com.apollographql.apollo3.compiler.codegen.java.adapter
+package com.apollographql.apollo3.compiler.codegen.java.helpers
 
 import com.apollographql.apollo3.compiler.codegen.Identifier.customScalarAdapters
 import com.apollographql.apollo3.compiler.codegen.Identifier.fromJson
@@ -15,9 +15,6 @@ import com.apollographql.apollo3.compiler.codegen.java.JavaSchemaContext
 import com.apollographql.apollo3.compiler.codegen.java.L
 import com.apollographql.apollo3.compiler.codegen.java.S
 import com.apollographql.apollo3.compiler.codegen.java.T
-import com.apollographql.apollo3.compiler.codegen.java.helpers.NamedType
-import com.apollographql.apollo3.compiler.codegen.java.helpers.beginOptionalControlFlow
-import com.apollographql.apollo3.compiler.codegen.java.helpers.suppressDeprecatedAnnotation
 import com.apollographql.apollo3.compiler.codegen.java.javaPropertyName
 import com.squareup.javapoet.CodeBlock
 import com.squareup.javapoet.MethodSpec

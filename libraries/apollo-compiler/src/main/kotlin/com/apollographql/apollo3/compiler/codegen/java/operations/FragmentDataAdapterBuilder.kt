@@ -5,7 +5,7 @@ import com.apollographql.apollo3.compiler.codegen.impl
 import com.apollographql.apollo3.compiler.codegen.java.CodegenJavaFile
 import com.apollographql.apollo3.compiler.codegen.java.JavaClassBuilder
 import com.apollographql.apollo3.compiler.codegen.java.JavaOperationsContext
-import com.apollographql.apollo3.compiler.codegen.java.adapter.ResponseAdapterBuilder
+import com.apollographql.apollo3.compiler.codegen.java.operations.util.ResponseAdapterBuilder
 import com.apollographql.apollo3.compiler.codegen.maybeFlatten
 import com.apollographql.apollo3.compiler.codegen.responseAdapter
 import com.apollographql.apollo3.compiler.ir.IrFragmentDefinition
