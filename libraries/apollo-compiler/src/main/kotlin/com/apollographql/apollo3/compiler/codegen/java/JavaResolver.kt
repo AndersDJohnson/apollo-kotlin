@@ -390,6 +390,7 @@ internal class JavaResolver(
   }
 
   fun registerMapType(name: String, className: ClassName) = register(ResolverKeyKind.MapType, name, className)
+  fun resolveMapType(name: String): ClassName = resolveAndAssert(ResolverKeyKind.MapType, name)
 
   private fun nonNullableAdapterInitializer2(type: IrType2): CodeBlock? {
     return when (type) {

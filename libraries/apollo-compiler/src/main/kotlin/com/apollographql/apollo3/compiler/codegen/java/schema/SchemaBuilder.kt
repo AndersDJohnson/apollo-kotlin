@@ -27,7 +27,7 @@ import com.squareup.javapoet.TypeSpec
 import javax.lang.model.element.Modifier
 
 internal class SchemaBuilder(
-    private val context: JavaContext,
+    private val context: JavaSchemaContext,
     private val generatedSchemaName: String,
     private val scalarMapping: Map<String, ScalarInfo>,
     private val objects: List<IrObject>,

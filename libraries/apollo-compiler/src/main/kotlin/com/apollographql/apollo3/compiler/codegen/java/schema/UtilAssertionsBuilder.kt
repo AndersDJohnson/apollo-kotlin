@@ -12,7 +12,7 @@ import com.squareup.javapoet.TypeSpec
 import com.squareup.javapoet.WildcardTypeName
 import javax.lang.model.element.Modifier
 
-internal class UtilAssertionsBuilder(val context: JavaContext) : JavaClassBuilder {
+internal class UtilAssertionsBuilder(val context: JavaSchemaContext) : JavaClassBuilder {
   override fun prepare() {}
 
   override fun build(): CodegenJavaFile {

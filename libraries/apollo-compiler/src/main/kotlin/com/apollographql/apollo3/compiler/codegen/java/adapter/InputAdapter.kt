@@ -11,6 +11,7 @@ import com.apollographql.apollo3.compiler.codegen.Identifier.value
 import com.apollographql.apollo3.compiler.codegen.Identifier.writer
 import com.apollographql.apollo3.compiler.codegen.java.JavaClassNames
 import com.apollographql.apollo3.compiler.codegen.java.JavaContext
+import com.apollographql.apollo3.compiler.codegen.java.JavaSchemaContext
 import com.apollographql.apollo3.compiler.codegen.java.L
 import com.apollographql.apollo3.compiler.codegen.java.S
 import com.apollographql.apollo3.compiler.codegen.java.T
@@ -27,7 +28,7 @@ import javax.lang.model.element.Modifier
 
 
 internal fun List<NamedType>.inputAdapterTypeSpec(
-    context: JavaContext,
+    context: JavaSchemaContext,
     adapterName: String,
     adaptedTypeName: TypeName,
 ): TypeSpec {
@@ -57,7 +58,7 @@ private fun notImplementedFromResponseMethodSpec(adaptedTypeName: TypeName) = Me
 
 
 private fun List<NamedType>.writeToResponseMethodSpec(
-    context: JavaContext,
+    context: JavaSchemaContext,
     adaptedTypeName: TypeName,
 ): MethodSpec {
   return MethodSpec.methodBuilder(toJson)

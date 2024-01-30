@@ -9,9 +9,9 @@ import com.apollographql.apollo3.compiler.JavaSchemaCodegenOptions
 import com.apollographql.apollo3.compiler.MODELS_OPERATION_BASED
 import com.apollographql.apollo3.compiler.PackageNameGenerator
 import com.apollographql.apollo3.compiler.TargetLanguage
-import com.apollographql.apollo3.compiler.codegen.SchemaAndOperationsLayoutImpl
 import com.apollographql.apollo3.compiler.codegen.ResolverKey
 import com.apollographql.apollo3.compiler.codegen.ResolverKeyKind
+import com.apollographql.apollo3.compiler.codegen.SchemaAndOperationsLayoutImpl
 import com.apollographql.apollo3.compiler.codegen.java.adapter.EnumResponseAdapterBuilder
 import com.apollographql.apollo3.compiler.codegen.java.operations.FragmentBuilder
 import com.apollographql.apollo3.compiler.codegen.java.operations.FragmentDataAdapterBuilder
@@ -166,7 +166,7 @@ internal object JavaCodegen {
           decapitalizeFields = decapitalizeFields ?: defaultDecapitalizeFields
       )
 
-      val context = JavaContext(
+      val context = JavaSchemaContext(
           layout = layout,
           resolver = resolver,
           generateMethods = generateMethodsJava(generateMethods),
@@ -272,7 +272,7 @@ internal object JavaCodegen {
           decapitalizeFields = decapitalizeFields
       )
 
-      val context = JavaContext(
+      val context = JavaOperationsContext(
           layout = layout,
           resolver = resolver,
           generateMethods = generateMethodsJava(generateMethods),

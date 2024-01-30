@@ -12,7 +12,7 @@ import com.squareup.javapoet.TypeSpec
 import javax.lang.model.element.Modifier
 
 internal class UnionBuilder(
-    private val context: JavaContext,
+    private val context: JavaSchemaContext,
     private val union: IrUnion,
 ) : JavaClassBuilder {
   private val layout = context.layout
