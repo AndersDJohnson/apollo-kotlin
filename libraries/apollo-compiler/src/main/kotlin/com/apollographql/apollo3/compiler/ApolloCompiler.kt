@@ -313,7 +313,6 @@ object ApolloCompiler {
     }
   }
 
-
   fun buildSchemaSources(
       codegenSchema: CodegenSchema,
       usedCoordinates: UsedCoordinates?,

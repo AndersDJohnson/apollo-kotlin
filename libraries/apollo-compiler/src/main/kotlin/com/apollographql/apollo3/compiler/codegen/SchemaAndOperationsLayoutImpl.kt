@@ -27,7 +27,7 @@ internal class SchemaAndOperationsLayoutImpl(
     private val useSemanticNaming: Boolean,
     private val decapitalizeFields: Boolean
 ) : SchemaAndOperationsLayout {
-  private val schemaPackageName = executableDocumentPackageName(codegenSchema.normalizedPath ?: "")
+  private val schemaPackageName = executableDocumentPackageName(codegenSchema.normalizedPath)
   private val schemaTypeToClassName: Map<String, String> = mutableMapOf<String, String>().apply {
     val usedNames = mutableSetOf<String>()
     val allTypes = codegenSchema.allTypes()
@@ -154,3 +154,10 @@ internal fun String.selections(): String = "${this}Selections"
  * when used in function bodies, prefixing with '_' prevents clashing with parent classes
  */
 internal fun String.variableName(): String = this.withUnderscorePrefix()
+
+internal fun SchemaAndOperationsLayout(codegenSchema: CodegenSchema, packageNameGenerator: PackageNameGenerator, useSemanticNaming: Boolean, decapitalizeFields: Boolean): SchemaAndOperationsLayout = SchemaAndOperationsLayoutImpl(
+    codegenSchema = codegenSchema,
+    packageNameGenerator = packageNameGenerator,
+    useSemanticNaming = useSemanticNaming,
+    decapitalizeFields = decapitalizeFields,
+)
